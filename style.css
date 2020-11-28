@@ -1,0 +1,434 @@
+html {
+  --background: hsla(0, 0%, 95%, 1);
+  background-color: var(--background);
+  --main-color: hsla(10, 77%, 57%, 1);
+}
+
+::selection {
+  color: white;
+  background: var(--main-color);
+}
+body {
+  --content-background: hsla(360, 100%, 100%, 1);
+  --text-color: black;
+  --shadow: hsla(0, 0%, 78%, 1);
+  --small: 16px;
+  --medium: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --large: 20px;
+  --xlarge: 24px;
+  margin: 0 30px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: var(--medium);
+  display: grid;
+  grid-template-columns: 25% 35% 30%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "profile . ."
+    "box about-me about-me"
+    "contact-info skills experience"
+    "contact-info skills experience"
+    "contact-info skills education"
+    "contact-info literature education"
+    "contact-info literature hobbies"
+    "footer footer footer";
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: center;
+}
+
+body:selection {
+  background: var(--main-color);
+  color: white;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.box {
+  grid-area: box;
+}
+
+.contact-info {
+  grid-area: contact-info;
+}
+
+.about-me {
+  grid-area: about-me;
+}
+
+.skills {
+  grid-area: skills;
+}
+
+.education {
+  grid-area: education;
+}
+
+.literature {
+  grid-area: literature;
+}
+
+.hobbies {
+  grid-area: hobbies;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Name & Position */
+.box {
+  z-index: 1;
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  justify-self: center;
+  width: 85%;
+  padding: 30px 0;
+  box-shadow: 5px 5px 5px var(--shadow);
+}
+
+.name {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: var(--xlarge);
+  align-self: center;
+}
+
+.position {
+  margin-top: 5px;
+  margin-bottom: 0;
+  align-self: center;
+  font-size: var(--large);
+  color: white;
+}
+
+/* Profile*/
+.profile {
+  border-radius: 360px;
+  width: 100%;
+  height: auto;
+  transform: scale(0.6);
+  justify-self: end;
+  align-self: end;
+  z-index: 2;
+  margin-bottom: -130px;
+}
+
+/* Contact Info */
+
+.contact-info {
+  margin-top: -50px;
+}
+
+.contact-info p {
+  font-weight: bold;
+  text-indent: 45px;
+  margin-top: 50px;
+  font-size: var(--medium);
+  color: var(--main-color);
+}
+
+.contact_piece {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: left;
+  align-items: flex-end;
+  margin-left: 45px;
+  margin-bottom: 50px;
+}
+
+.contact-icon {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:active {
+  color: var(--main-color);
+}
+
+a:visited {
+  color: var(--main-color);
+}
+
+/* General */
+.content_entry {
+  display: block;
+  border: 2px solid var(--content-background);
+  padding: 20px;
+  border-radius: 25px;
+  background-color: var(--content-background);
+  box-shadow: 5px 5px 5px var(--shadow);
+}
+.content_entry p {
+  text-align: left;
+}
+.entry_name {
+  display: flex;
+  justify-content: left;
+  color: var(--main-color);
+}
+
+.entry_name h3 {
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: flex-start;
+  font-size: var(--large);
+}
+
+/* Education */
+.education_piece p {
+  text-align: left;
+}
+
+.subject {
+  font-size: var(--large);
+  font-weight: bold;
+}
+
+.university {
+  font-size: var(--medium);
+  margin-bottom: 7px;
+}
+
+.study_period {
+  margin-top: 0;
+  font-size: var(--small);
+}
+
+/* Literature */
+.book_list {
+  margin: 10px;
+}
+
+.book h3 {
+  font-size: var(--large);
+  /* color: var(--main-color); */
+  margin-bottom: 5px;
+}
+
+.book h4 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-style: italic;
+  font-size: var(--small);
+}
+.book p {
+  margin-top: 5px;
+}
+
+.book a:hover {
+  color: var(--main-color);
+}
+/* Hobbies */
+.hobbies_list li {
+  font-size: var(--medium);
+}
+
+/* Experience */
+.job_title {
+  font-size: var(--large);
+}
+
+.company_name {
+  font-weight: normal;
+  font-size: var(--large);
+  margin-bottom: 10px;
+}
+
+.job_period {
+  font-size: var(--small);
+  font-weight: normal;
+  margin: 0;
+}
+
+.experience li {
+  font-size: var(--medium);
+}
+
+/* Skills */
+
+.skills h3 {
+  font-size: var(--large);
+}
+
+.skills p {
+  font-size: var(--medium);
+}
+
+.skills b {
+  color: var(--main-color);
+}
+
+/* Footer */
+.footer {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  /* Profile */
+  .profile {
+    margin-bottom: -130px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  body {
+    grid-template-columns: 25% 25% 50%;
+    grid-template-areas:
+      "profile profile ."
+      "box box about-me"
+      "skills skills about-me"
+      "skills skills education"
+      "skills skills experience"
+      "hobbies hobbies experience"
+      ". . literature"
+      "contact-info contact-info contact-info";
+
+    column-gap: 4%;
+    row-gap: 2%;
+  }
+
+  /* Profile */
+  .profile {
+    margin-bottom: -140px;
+  }
+
+  /* General */
+  .content_entry {
+    background-size: cover;
+  }
+
+  /* Contact Info */
+  .contact-info {
+    margin: 0;
+    display: flex;
+    background-color: var(--main-color);
+    background-size: cover;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .contact-info p {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--background);
+  }
+
+  .contact_piece {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 0;
+    margin-bottom: 40px;
+  }
+
+  .contact-icon {
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: var(--text-color);
+  }
+
+  a:active {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Name & Position */
+  .box {
+    border-radius: 0;
+    box-shadow: none;
+    justify-self: flex-start;
+    align-self: none;
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  /* Profile*/
+  .profile {
+    margin-top: -60px;
+    box-shadow: 10px 10px 10px var(--shadow);
+    transform: scale(0.8);
+    margin-bottom: 1px;
+  }
+
+  /* General */
+  .content_entry {
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 1px 1px 5px var(--shadow);
+  }
+
+  /* Contact Info */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+    background-size: cover;
+    color: white;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .contact-info p {
+    font-weight: bold;
+    color: white;
+    text-indent: 0;
+    text-align: center;
+    justify-self: start;
+  }
+
+  a {
+    color: var(--text-color);
+    align-self: center;
+  }
+
+  a:active {
+    color: white;
+  }
+
+  a:visited {
+    color: white;
+  }
+}
